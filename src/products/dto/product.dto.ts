@@ -1,4 +1,8 @@
-import { IsString, IsNumber, IsOptional, IsBoolean } from 'class-validator';
+import { IsString,
+        IsNumber,
+        IsOptional,
+        IsBoolean
+} from 'class-validator'
 
 //aqui vou criar um Dto para conseguir padronizar a requisição pela API brasileira e europeia também, evitar problemas de padronização
 
@@ -23,20 +27,20 @@ export class ProductDto {
 
     @IsOptional()
     @IsString()
-    category?: string;
+    category?: string
 
     @IsOptional()
     @IsString()
-    department?: string;
+    department?: string
 
     @IsOptional()
     @IsBoolean()
-    hasDiscount?: boolean;
+    hasDiscount?: boolean
 
     @IsOptional()
     @IsNumber()
-    discountValue?: number;
+    discountValue?: number
 
     @IsString()
-    provider: 'brazilian' | 'european';
+    provider: 'brazilian' | 'european'
 }
