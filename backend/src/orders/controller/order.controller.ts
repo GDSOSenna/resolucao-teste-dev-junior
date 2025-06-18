@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { OrderService } from '../service/order.service';
 import { CreateOrderDto } from '../dto/create-order.dto';
-import { Order } from 'generated/prisma';
+import { Order } from '@prisma/client';
 
 @Controller('orders')
 export class OrderController {
