@@ -9,17 +9,28 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, name, price, imageUrl, onAddToCart }: ProductCardProps) => {
-
   const [imgSrc, setImgSrc] = useState(imageUrl)
-  
+
   return (
-    <div style={{ border: '1px solid #ccc', padding: 12, marginBottom: 12 }}>
-      <img src={imageUrl} alt={name} width={150} onError={() =>
-        setImgSrc('https://placehold.co/150x150?text=Imagem+indisponível')
-      } style={{ objectFit: 'cover' }} />
+    <div className="product-card">
       <h3>{name}</h3>
-      <p><strong>R$ {price.toFixed(2)}</strong></p>
-      <button onClick={onAddToCart}>Adicionar ao carrinho</button>
+      <img
+        src={imgSrc}
+        alt={name}
+        onError={() =>
+          setImgSrc('https://placehold.co/150x150')
+        }
+        style={{
+          objectFit: 'cover',
+          maxWidth: '150px',
+          width: '100%',
+          height: 'auto',
+          borderRadius: '4px'
+        }}
+      />
+      
+      <p className="text-green-700 font-bold">R$ {price.toFixed(2)}</p>
+      <button className="button" onClick={onAddToCart}>Adicionar ao carrinho</button>
     </div>
   );
 };

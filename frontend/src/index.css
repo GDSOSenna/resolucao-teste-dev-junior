@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  a {
+    @apply text-blue-600 hover:underline;
+  }
+}
+
+.product-card {
+  @apply border border-gray-200 px-2 py-6 m-6 flex flex-col shadow-sm justify-center items-center rounded-sm text-center gap-2 hover:shadow-blue-300 h-[320px] min-h-[250px] w-[240px]
+} 
+
+.button {
+  @apply border px-2 py-1 border-gray-300 rounded-sm hover:border-amber-400 hover:text-amber-600 cursor-pointer hover:border-2
+}
+
+.div-products{
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6 justify-items-center
+}
+
+.navbar{
+  @apply flex flex-row bg-gray-200 justify-between py-10 px-10 items-center shadow
+}
+
+.logo{
+  @apply text-6xl mr-10 ml-10
+}
+
+.navbar-icons{
+  @apply flex flex-row gap-6
+}
+
+.searchbar{
+  @apply  flex flex-row items-center py-2 px-2 border rounded gap-6 shadow hover:shadow-blue-300 mr-100 h-10
+}
+
+.filter{
+  @apply flex flex-col m-6 items-center
+}
+
+.filter-label{
+  @apply flex flex-row px-10 py-2 rounded border-gray-300 shadow hover:shadow-blue-300 text-xl gap-4 border w-[300px] justify-center items-center
+}

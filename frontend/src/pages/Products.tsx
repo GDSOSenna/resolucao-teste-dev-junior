@@ -21,16 +21,16 @@ export default function Products() {
   }, [provider]);
 
   return (
-    <div style={{ padding: 20 }}>
-      <label>
+    <div  className='filter'>
+      <label className='filter-label'>
         Fornecedor:{" "}
-        <select value={provider} onChange={(e) => setProvider(e.target.value as 'brazilian' | 'european')}>
+        <select value={provider} onChange={(e) => setProvider(e.target.value as 'brazilian' | 'european')} className='outline-none shadow cursor-pointer'>
           <option value="brazilian">Brasileiro</option>
           <option value="european">Europeu</option>
         </select>
       </label>
 
-      <div style={{ marginTop: 20 }}>
+      <div className='div-products'>
         {products.map((product) => (
           <ProductCard
             key={product.id}

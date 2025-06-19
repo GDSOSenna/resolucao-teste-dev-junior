@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom";
 import { FiUser, FiShoppingCart, FiSearch } from "react-icons/fi";
-import "../styles/Header.css"
 
 export default function Header() {
     return(
         <>
-            <header className="header">
-                <nav className="nav">
-                    <div className="logo-search-div">
-                        <Link to="/"><h1 className="logo">LOGO</h1></Link>
-                        <div className="search-div">
-                            <input type="text" placeholder="Buscar item" />
-                            <button><FiSearch/></button>
+            <header>
+                <nav className="navbar">
+                        <Link to="/"  className="logo"><h1>LOGO</h1></Link>
+                        <div className="searchbar">
+                            <input type="text" placeholder="Buscar item" className="appearance-none outline-none border-none w-[250px]"/>
+                            <button><FiSearch className=" cursor-pointer hover:opacity-50 bg-gray-400 rounded-4xl h-8 w-auto"/></button>
                         </div>
-                    </div>
-                    <div className="icons-div">
-                        <Link to="/perfil"><FiUser/></Link>
-                        <Link to="/cart"><FiShoppingCart/></Link>
+                    <div className="navbar-icons">
+                        <Link to="/perfil" className="text-3xl"><FiUser/></Link>
+                        <Link to="/cart" className="text-3xl"><FiShoppingCart/></Link>
                     </div>
                 </nav>
             </header>

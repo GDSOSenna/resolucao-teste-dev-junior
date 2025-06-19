@@ -5,7 +5,7 @@ export async function fetchProductsByProvider(provider: 'brazilian' | 'european'
 
   const normalized = response.data.map((item: any) => ({
     id: `${provider}:${item.id}`,
-    name: item.name || item.nome,
+    name: (item.name || item.nome)?.toUpperCase(),
     price: parseFloat(item.price || item.preco),
     imageUrl: item.imageUrl?.replace('placeimg.com', 'placehold.co') ||
     item.gallery?.[0]?.replace('placeimg.com', 'placehold.co') ||
