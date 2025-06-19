@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { fetchProductsByProvider } from '../services/products';
 import ProductCard from '../components/ProductCard';
+import { useCart } from '../context/CartContext';
+import { toast } from 'react-toastify';
 
 interface Product {
   id: string;
@@ -13,6 +15,7 @@ interface Product {
 export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
   const [provider, setProvider] = useState<'brazilian' | 'european'>('brazilian');
+  const { addToCart } = useCart();
 
   useEffect(() => {
     fetchProductsByProvider(provider)
@@ -38,7 +41,10 @@ export default function Products() {
             name={product.name}
             price={product.price}
             imageUrl={product.imageUrl}
-            onAddToCart={() => console.log('Adicionar ao carrinho:', product)}
+            onAddToCart={() => {
+              addToCart(product),
+              toast.success('Produto adicionado ao carrinho!')
+            }}
           />
         ))}
       </div>

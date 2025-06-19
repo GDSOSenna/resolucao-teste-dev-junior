@@ -1,5 +1,7 @@
+import { toast } from 'react-toastify';
 import { useCart } from '../context/CartContext';
 import { useEffect } from 'react';
+import { createOrder } from '../services/orders';
 
 export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
@@ -11,6 +13,16 @@ export default function Cart() {
   const total = cartItems.reduce((acc, item) => {
     return acc + item.price * (item.quantity ?? 1);
   }, 0);
+
+  const handleSubmit = async() => {
+    try {
+      await createOrder(cartItems)
+      toast.success("Pedido enviado com sucesso!")
+    } catch (error) {
+      console.error("Erro ao enviar pedido", error)
+      toast.error("Erro ao finalizar compra. Tente novamente.")
+    }
+  }
 
   return (
     <div style={{ padding: 20 }}>
@@ -38,13 +50,13 @@ export default function Cart() {
           <p>
             <strong>Total: R$ {total.toFixed(2)}</strong>
           </p>
+          
+          <button onClick={() => {clearCart()}}>
+            Limpar carrinho de compras
+          </button>
+          <button onClick={() => {handleSubmit(), clearCart()
 
-          <button
-            onClick={() => {
-              alert('Pedido enviado!');
-              clearCart();
-            }}
-          >
+          }}>
             Finalizar compra
           </button>
         </>
