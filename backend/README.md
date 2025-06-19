@@ -34,7 +34,7 @@ npx prisma generate
 4. Inicie o servidor
 
 ```bash
-nest start
+npm start
 ```
 
 5. API estará disponível em:
