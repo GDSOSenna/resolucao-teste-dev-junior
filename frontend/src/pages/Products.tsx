@@ -8,6 +8,7 @@ interface Product {
   id: string;
   name: string;
   price: number;
+  description: string;
   imageUrl: string;
   provider: string;
 }
@@ -26,7 +27,7 @@ export default function Products() {
   return (
     <div  className='filter'>
       <label className='filter-label'>
-        Fornecedor:{" "}
+        <p className='w-[110px] text-center'>Fornecedor:{" "}</p>
         <select value={provider} onChange={(e) => setProvider(e.target.value as 'brazilian' | 'european')} className='outline-none shadow cursor-pointer'>
           <option value="brazilian">Brasileiro</option>
           <option value="european">Europeu</option>
@@ -40,6 +41,7 @@ export default function Products() {
             id={product.id}
             name={product.name}
             price={product.price}
+            description={product.description}
             imageUrl={product.imageUrl}
             onAddToCart={() => {
               addToCart(product),

@@ -4,12 +4,14 @@ interface ProductCardProps {
   id: string;
   name: string;
   price: number;
+  description: string;
   imageUrl: string;
   onAddToCart: () => void;
 }
 
-const ProductCard = ({ id, name, price, imageUrl, onAddToCart }: ProductCardProps) => {
+const ProductCard = ({name, price, description, imageUrl, onAddToCart }: ProductCardProps) => {
   const [imgSrc, setImgSrc] = useState(imageUrl)
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="product-card">
@@ -28,7 +30,18 @@ const ProductCard = ({ id, name, price, imageUrl, onAddToCart }: ProductCardProp
           borderRadius: '4px'
         }}
       />
-      
+      <p className={`w-[220px] text-sm ${expanded ? '' : 'line-clamp-2'}`}>
+        {description}
+      </p>
+
+      {description.length > 80 && (
+        <button
+          onClick={() => setExpanded((prev) => !prev)}
+          className="text-blue-600 text-sm underline w-fit cursor-pointer"
+        >
+          {expanded ? 'Mostrar menos' : 'Leia mais'}
+        </button>
+      )}
       <p className="text-green-700 font-bold">R$ {price.toFixed(2)}</p>
       <button className="button" onClick={onAddToCart}>Adicionar ao carrinho</button>
     </div>

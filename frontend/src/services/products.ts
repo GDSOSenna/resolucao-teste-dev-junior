@@ -7,6 +7,7 @@ export async function fetchProductsByProvider(provider: 'brazilian' | 'european'
     id: `${provider}:${item.id}`,
     name: (item.name || item.nome)?.toUpperCase(),
     price: parseFloat(item.price || item.preco),
+    description: (item.description || item.description),
     imageUrl: item.imageUrl?.replace('placeimg.com', 'placehold.co') ||
     item.gallery?.[0]?.replace('placeimg.com', 'placehold.co') ||
     'https://placehold.co/150x150?text=Sem+Imagem',

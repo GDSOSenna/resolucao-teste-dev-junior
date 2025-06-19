@@ -17,37 +17,37 @@
 }
 
 .product-card {
-  @apply border border-gray-200 px-2 py-6 m-6 flex flex-col shadow-sm justify-center items-center rounded-sm text-center gap-2 hover:shadow-blue-300 h-[320px] min-h-[250px] w-[240px]
-} 
+  @apply border border-gray-200 m-1 flex flex-col shadow-sm justify-center items-center rounded-sm text-center gap-2 hover:shadow-blue-300 h-[400px] min-h-[250px] w-[240px] 
+}
 
 .button {
-  @apply border px-2 py-1 border-gray-300 rounded-sm hover:border-amber-400 hover:text-amber-600 cursor-pointer hover:border-2
+  @apply border px-2 py-1 border-gray-300 rounded-sm hover:border-amber-400 hover:text-amber-600 cursor-pointer hover:border-2 hover:scale-101
 }
 
 .div-products{
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6 justify-items-center
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-7 gap-5 justify-items-center
 }
 
 .navbar{
-  @apply flex flex-row bg-gray-200 justify-between py-10 px-10 items-center shadow
+  @apply flex flex-row bg-gray-200 justify-evenly py-10 px-10 items-center shadow
 }
 
 .logo{
-  @apply text-6xl mr-10 ml-10
+  @apply text-6xl mr-10 ml-10 hover:scale-110
 }
 
 .navbar-icons{
-  @apply flex flex-row gap-6
+  @apply flex flex-row gap-6 
 }
 
 .searchbar{
-  @apply  flex flex-row items-center py-2 px-2 border rounded gap-6 shadow hover:shadow-blue-300 mr-100 h-10
+  @apply  flex flex-row items-center py-2 px-2 border rounded gap-6 shadow hover:shadow-blue-300 h-10 w-auto
 }
 
 .filter{
-  @apply flex flex-col m-6 items-center
+  @apply flex flex-col m-6 items-center gap-10
 }
 
 .filter-label{
-  @apply flex flex-row px-10 py-2 rounded border-gray-300 shadow hover:shadow-blue-300 text-xl gap-4 border w-[300px] justify-center items-center
+  @apply flex flex-row px-0 py-0 rounded border-gray-300 shadow hover:shadow-blue-300 text-xl border w-auto justify-center items-center m-1 pl-1
 }

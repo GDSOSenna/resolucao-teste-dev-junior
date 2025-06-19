@@ -13,3 +13,8 @@ export default {
   },
   plugins: [],
 }
+
+module.exports = {
+  // ...
+  plugins: [require('@tailwindcss/line-clamp')],
+};
