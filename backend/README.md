@@ -37,7 +37,7 @@ npm start
 
 5. API estará disponível em:
 
-http://localhost:3000
+`http://localhost:3000`
 
 ## Estrutura
 ```
@@ -53,8 +53,8 @@ backend/
 ```
 ## Endpoints para requisição
 
-GET /products
-GET /products/provider/:provider
-GET /products/:provider:id
-POST /orders
-GET /orders
+- `GET /products`
+- `GET /products/provider/:provider`
+- `GET /products/:provider:id`
+- `POST /orders`
+- `GET /orders`
