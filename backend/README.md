@@ -40,7 +40,7 @@ npm start
 http://localhost:3000
 
 ## Estrutura
-
+```
 backend/
 ├── src/
 │   ├── products/
@@ -50,7 +50,7 @@ backend/
 ├── prisma/
 │   └── schema.prisma
 └── README.md
-
+```
 ## Endpoints para requisição
 
 GET /products
