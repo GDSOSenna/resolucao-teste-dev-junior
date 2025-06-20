@@ -23,6 +23,10 @@ export default function Products() {
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
+  const handleAddToCart = (product: Product) => {
+    addToCart(product);
+    toast.success("Produto adicionado ao carrinho"!);
+  };
 
   useEffect(() => {
     fetchProductsByProvider(provider)
@@ -32,9 +36,9 @@ export default function Products() {
 
   return (
     <div className="filter">
-      <label className="flex flex-row items-center">
+      <div className="flex flex-row items-center">
         <div className="filter-label">
-          <p className="w-[110px] text-center">Fornecedor: </p>
+          <label className="w-[110px] text-center">Fornecedor: </label>
           <select
             value={provider}
             onChange={(e) =>
@@ -46,7 +50,7 @@ export default function Products() {
             <option value="european">Europeu</option>
           </select>
         </div>
-        <div>
+        <label>
           <input
             type="text"
             placeholder="Buscar item..."
@@ -54,25 +58,27 @@ export default function Products() {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="searchbar"
           />
-        </div>
-      </label>
-
-      <div className="div-products">
-        {filteredProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            description={product.description}
-            imageUrl={product.imageUrl}
-            onAddToCart={() => {
-              addToCart(product),
-                toast.success("Produto adicionado ao carrinho!");
-            }}
-          />
-        ))}
+        </label>
       </div>
+      <>
+        {filteredProducts.length === 0 ? (
+          <p className="text-gray-500 mt-4">Nenhum produto encontrado.</p>
+        ) : (
+          <div className="div-products">
+            {filteredProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                price={product.price}
+                description={product.description}
+                imageUrl={product.imageUrl}
+                onAddToCart={() => handleAddToCart(product)}     
+              />
+            ))}
+          </div>
+      )}
+      </>
     </div>
   );
 }

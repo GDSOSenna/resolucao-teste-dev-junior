@@ -18,6 +18,7 @@ export default function Cart() {
     try {
       await createOrder(cartItems);
       toast.success("Pedido enviado com sucesso!");
+      clearCart();
     } catch (error) {
       console.error("Erro ao enviar pedido", error);
       toast.error("Erro ao finalizar compra. Tente novamente.");
@@ -81,9 +82,7 @@ export default function Cart() {
             Limpar carrinho de compras
           </button>
           <button
-            onClick={() => {
-              handleSubmit(), clearCart();
-            }}
+            onClick={handleSubmit}
             className="button"
           >
             Finalizar compra
