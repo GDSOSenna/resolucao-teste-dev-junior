@@ -30,5 +30,6 @@ export async function createOrder(cartItems: Product[]) {
     })),
   };
 
-  return api.post("/orders", payload);
+  const response = await api.post("/orders", payload);
+  return response.data
 }
