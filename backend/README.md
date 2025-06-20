@@ -21,14 +21,12 @@ cd backend
 
 ```bash
 npm install
-npm install @prisma/client
 ```
 
 3. Gere o banco de dados e o Prisma Client
 
 ```bash
 npx prisma migrate dev --name create_orders
-npx prisma generate
 ```
 
 4. Inicie o servidor

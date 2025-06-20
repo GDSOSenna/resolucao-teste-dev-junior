@@ -31,19 +31,13 @@ cd frontend
 npm install
 ```
 
-3. Instale as bibliotecas de forma manual
-
-```bash
-npm install react-router-dom react-icons axios
-```
-
-4. Inicie o projeto
+3. Inicie o projeto
 
 ```bash
 npm run dev
 ```
 
-5. Aplicação ficará disponível na porta:
+4. Aplicação ficará disponível na porta:
 
 http://localhost:5173
 
