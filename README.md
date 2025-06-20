@@ -15,6 +15,7 @@ A proposta consiste em um sistema de e-commerce com:
 ## 📁 Estrutura do projeto
 
 ├── backend/ → API NestJS + Prisma + SQLite
+
 ├── frontend/ → Interface React + Vite
 
 ---
