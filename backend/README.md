@@ -58,6 +58,5 @@ backend/
 GET /products
 GET /products/provider/:provider
 GET /products/:provider:id
-
 POST /orders
 GET /orders

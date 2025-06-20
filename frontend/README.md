@@ -14,7 +14,8 @@ Este é o frontend do projeto de e-commerce com listagem de produtos, carrinho d
 - React Router DOM
 - React Icons
 - Axios
-- CSS puro
+- Tailwind CSS
+- React Toastify
 
 ## 📦 Instalação e uso
 
@@ -50,10 +51,10 @@ http://localhost:5173
 
 frontend/
 ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   └── App.tsx
+│  ├── components/
+│  ├── pages/
+│  ├── services/
+│  └── App.tsx
 ├── public/
 └── README.md
 
@@ -63,3 +64,7 @@ GET /products
 GET /products/provider/:provider
 POST /orders
 GET /orders
+
+## Preview
+
+![screenshot](./public/Captura%20de%20tela%202025-06-20%20012905.png)
