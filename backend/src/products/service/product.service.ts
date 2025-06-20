@@ -4,13 +4,11 @@ import { NotFoundException } from '@nestjs/common';
 import { BrazilianProviderService } from '../providers/brazilian-provider.service';
 import { EuropeanProviderService } from '../providers/european-provider.service';
 
-//aqui vamos separar a requisição por provedores, para evitar conflitos de ID no futuro e deixar o carrinho mais organizado também
-
 @Injectable()
 export class ProductService {
   constructor(
     private readonly brazilianService: BrazilianProviderService,
-    private readonly europeanService: EuropeanProviderService
+    private readonly europeanService: EuropeanProviderService,
   ) {}
 
   async getAllProducts(): Promise<ProductDto[]> {
@@ -22,17 +20,17 @@ export class ProductService {
     return [...brazilian, ...european];
   }
 
-  async getBrazilianProducts(): Promise<ProductDto[]>{
-    return this.brazilianService.getAllProducts()
+  async getBrazilianProducts(): Promise<ProductDto[]> {
+    return this.brazilianService.getAllProducts();
   }
 
-  async getEuropeanProducts(): Promise<ProductDto[]>{
-    return this.europeanService.getAllProducts()
+  async getEuropeanProducts(): Promise<ProductDto[]> {
+    return this.europeanService.getAllProducts();
   }
 
   async getProductByProviderAndId(
     provider: 'brazilian' | 'european',
-    id: string
+    id: string,
   ): Promise<ProductDto> {
     if (provider === 'brazilian') {
       return this.brazilianService.getProductById(id);

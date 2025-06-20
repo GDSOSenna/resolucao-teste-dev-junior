@@ -14,17 +14,19 @@ export class BrazilianProviderService {
     const response = await firstValueFrom(this.http.get(this.baseUrl));
     const products = response.data;
 
-    return products.map((item: any): ProductDto => ({
-      id: `brazilian:${item.id}`,
-      name: item.nome || item.name,
-      description: item.descricao,
-      imageUrl: item.imagem,
-      price: parseFloat(item.preco),
-      material: item.material,
-      category: item.categoria,
-      department: item.departamento,
-      provider: 'brazilian',
-    }));
+    return products.map(
+      (item: any): ProductDto => ({
+        id: `brazilian:${item.id}`,
+        name: item.nome || item.name,
+        description: item.descricao,
+        imageUrl: item.imagem,
+        price: parseFloat(item.preco),
+        material: item.material,
+        category: item.categoria,
+        department: item.departamento,
+        provider: 'brazilian',
+      }),
+    );
   }
 
   async getProductById(id: string): Promise<ProductDto> {

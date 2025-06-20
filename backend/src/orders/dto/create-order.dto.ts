@@ -5,28 +5,28 @@ import {
   IsNumber,
   IsInt,
   Min,
-} from 'class-validator'
-import { Type } from 'class-transformer'
+} from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateOrderItemDto {
   @IsString()
-  productId: string
+  productId: string;
 
   @IsString()
-  name: string
+  name: string;
 
   @IsNumber()
-  price: number
+  price: number;
 
   @IsInt()
   @Min(1)
-  quantity: number
+  quantity: number;
 
   @IsString()
-  provider: string
+  provider: string;
 
   @IsString()
-  imageUrl: string
+  imageUrl: string;
 }
 
 export class CreateOrderDto {

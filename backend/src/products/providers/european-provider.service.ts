@@ -1,4 +1,4 @@
-import { Injectable} from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { ProductDto } from '../dto/product.dto';
 import { firstValueFrom } from 'rxjs';
@@ -14,18 +14,19 @@ export class EuropeanProviderService {
     const response = await firstValueFrom(this.http.get(this.baseUrl));
     const products = response.data;
 
-    return products.map((item: any): ProductDto => ({
-      id: `european:${item.id}`,
-      name: item.name,
-      description: item.description,
-      imageUrl: item.gallery?.[0] || '',
-      price: parseFloat(item.price),
-      material: item.details?.material || 'N/A',
-      hasDiscount: item.hasDiscount,
-      discountValue: parseFloat(item.discountValue || '0'),
-      provider: 'european',
-    }))
-    
+    return products.map(
+      (item: any): ProductDto => ({
+        id: `european:${item.id}`,
+        name: item.name,
+        description: item.description,
+        imageUrl: item.gallery?.[0] || '',
+        price: parseFloat(item.price),
+        material: item.details?.material || 'N/A',
+        hasDiscount: item.hasDiscount,
+        discountValue: parseFloat(item.discountValue || '0'),
+        provider: 'european',
+      }),
+    );
   }
 
   async getProductById(id: string): Promise<ProductDto> {
