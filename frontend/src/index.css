@@ -7,7 +7,12 @@
     @apply bg-gray-100 text-gray-900;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
   }
 
@@ -17,37 +22,53 @@
 }
 
 .product-card {
-  @apply border border-gray-200 m-1 flex flex-col shadow-sm justify-center items-center rounded-sm text-center gap-2 hover:shadow-blue-300 h-[400px] min-h-[250px] w-[240px] 
+  @apply border border-gray-200 m-1 flex flex-col shadow-sm justify-center items-center rounded-sm text-center gap-2 hover:shadow-blue-300 h-[400px] min-h-[250px] w-[240px];
 }
 
 .button {
-  @apply border px-2 py-1 border-gray-300 rounded-sm hover:border-amber-400 hover:text-amber-600 cursor-pointer hover:border-2 hover:scale-101
+  @apply border px-2 py-1 border-gray-300 rounded-sm hover:border-amber-400 hover:text-amber-600 cursor-pointer hover:border-2 hover:scale-101;
 }
 
-.div-products{
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-7 gap-5 justify-items-center
+.div-products {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-7 gap-5 justify-items-center;
 }
 
-.navbar{
-  @apply flex flex-row bg-gray-200 justify-evenly py-10 px-10 items-center shadow
+.navbar {
+  @apply flex flex-row justify-evenly py-10 px-10 items-center shadow max-w-none;
 }
 
-.logo{
-  @apply text-6xl mr-10 ml-10 hover:scale-110
+.logo {
+  @apply text-6xl mr-10 ml-10 hover:scale-110;
 }
 
-.navbar-icons{
-  @apply flex flex-row gap-6 
+.navbar-icons {
+  @apply flex flex-row gap-6;
 }
 
-.searchbar{
-  @apply  flex flex-row items-center py-2 px-2 border rounded gap-6 shadow hover:shadow-blue-300 h-10 w-auto
+.searchbar {
+  @apply flex flex-row items-center border rounded gap-6 shadow hover:shadow-blue-300 h-10 w-auto ml-5 px-3;
 }
 
-.filter{
-  @apply flex flex-col m-6 items-center gap-10
+.filter {
+  @apply flex flex-col m-6 items-center gap-10;
 }
 
-.filter-label{
-  @apply flex flex-row px-0 py-0 rounded border-gray-300 shadow hover:shadow-blue-300 text-xl border w-auto justify-center items-center m-1 pl-1
+.filter-label {
+  @apply flex flex-row px-0 py-0 rounded border-gray-300 shadow hover:shadow-blue-300 text-xl border w-auto justify-center items-center m-1 pl-1 gap-6 h-10;
+}
+
+.cart {
+  @apply flex flex-col text-center py-10 items-center w-auto gap-4;
+}
+
+.title {
+  @apply text-3xl font-bold border-1 border-blue-400 w-[500px] py-2 rounded bg-blue-100;
+}
+
+.list {
+  @apply flex flex-row border-b-1 border-gray-300 px-4 w-[700px] rounded gap-5 justify-between items-center py-1;
+}
+
+.btn-sum-sub {
+  @apply border border-gray-300 rounded-sm hover:border-amber-400 hover:text-amber-600 cursor-pointer hover:border-2 hover:scale-101 px-2;
 }

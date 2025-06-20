@@ -1,8 +1,8 @@
-import axios from 'axios';
-import type { Product } from '../context/CartContext';
+import axios from "axios";
+import type { Product } from "../context/CartContext";
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: "http://localhost:3000",
 });
 
 interface OrderItem {
@@ -26,9 +26,9 @@ export async function createOrder(cartItems: Product[]) {
       price: item.price,
       quantity: item.quantity || 1,
       provider: item.provider,
-      imageUrl: item.imageUrl
+      imageUrl: item.imageUrl,
     })),
   };
 
-  return api.post('/orders', payload);
+  return api.post("/orders", payload);
 }
